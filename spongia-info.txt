@@ -1,0 +1,18 @@
+Názov tímu: Faisceau de Lumière
+Názov hry: Eridu
+Vývojové prostredie a prostriedky: Vue.js
+
+Obrázky:
+* Ikony budov / technológii
+Zdroj: https://www.flaticon.com/
+Licencia: proprietárna licencia flaticon
+
+Hudba:
+* Rebeticaud
+Zdroj: https://freemusicarchive.org/music/Sam_Shalabi/
+Autor: Sam Shalabi
+Licencia: CC BY-NC-SA 3.0
+* Nové kolo
+Zdroj: https://freesound.org/people/JonnyRuss01/sounds/478196/
+Autor: JonnyRuss01
+Licencia: CC 0

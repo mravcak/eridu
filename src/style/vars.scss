@@ -1,0 +1,10 @@
+$terrain-soil: #A08151;
+$terrain-marsh: #71653A;
+$terrain-soil-irrigated: #8B984B;
+$terrain-river: #544AA4;
+
+$ui-bg: darken($terrain-soil, 15);
+$ui-bg-cell: darken($terrain-soil, 25);
+$ui-text: lighten($terrain-soil, 10);
+
+$border-radius: 0.25rem;

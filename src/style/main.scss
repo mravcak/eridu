@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Eczar:wght@400;700&display=swap');
+@import './vars.scss';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Eczar', serif;
+  line-height: 1.2;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, ul, ol {
+  margin: 0 0 0.5rem;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+h4 {
+  font-size: 14px;
+}
+
+
+.play-screen {
+  height: 100vh;
+  background-color: #382C2C;
+  overflow: hidden;
+}
+
+.map-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  perspective: 100vw;
+  background-color: #302C26;
+}
+
+.map {
+  width: min(70vw, 90vh);
+  height: min(70vw, 90vh);
+  table-layout: fixed;
+  border-collapse: collapse;
+  transform: rotateX(40deg);
+  .tile {
+    border: 1px solid rgba(black, 0.15);
+    cursor: context-menu;
+    text-align: center;
+    font-size: 2rem;
+    background-position: center;
+    background-size: 70% auto;
+    background-repeat: no-repeat;
+    &:hover {
+      opacity: 0.8;
+    }
+    &.active {
+      outline: 0.5rem solid rgba(white, 0.5);
+    }
+    &.SOIL {
+      background-color: $terrain-soil;
+    }
+    &.SOIL-IRRIGATED {
+      background-color: $terrain-soil-irrigated;
+    }
+    &.MARSH {
+      background-color: $terrain-marsh;
+    }
+    &.RIVER {
+      background-color: $terrain-river;
+    }
+  }
+}
+
+.header {
+  position: absolute;
+  z-index: 10;
+  background-color: $ui-bg;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem;
+    display: flex;
+  }
+  .cell {
+    & + .cell {
+      margin-left: 0.5rem;
+    }
+  }
+  .cell.-display {
+    background-color: $ui-bg-cell;
+    color: $ui-text;
+    padding: 0.25rem 0.5rem;
+    border-radius: $border-radius;
+  }
+}
+
+.window {
+  background-color: $ui-bg;
+  position: absolute;
+  width: 20rem;
+  padding: 0.5rem;
+  border-radius: $border-radius;
+  max-height: calc(100vh - 4rem);
+  overflow: auto;
+}
+
+.window-section {
+  background-color: $ui-bg-cell;
+  border-radius: $border-radius;
+  color: white;
+  padding: 0.5rem 0.5rem 0;
+  overflow: auto;
+  & + & {
+    margin-top: 0.5rem;
+  }
+}
+
+.window-header {
+  display: flex;
+  margin-bottom: 0.5rem;
+  justify-content: space-between;
+  align-items: space-between;
+  h2 {
+    color: white;
+    margin: 0;
+  }
+}
+
+.window--tile {
+  right: 1rem;
+  top: 4rem;
+}
+
+.window--technologies {
+  left: 1rem;
+  top: 4rem;
+}
+
+.window--center {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -15rem;
+  width: 30rem;
+  box-shadow: 0 0 0 200vw rgba(black, 0.7);
+}
+
+.ui-button {
+  background-color: $ui-bg;
+  padding: 0.5rem 0.5rem 0;
+  border-radius: $border-radius;
+  margin-bottom: 0.5rem;
+  border: 1px solid $terrain-soil;
+  display: flex;
+  .media {
+    flex: 0 0 2.5rem;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .icon-wrap {
+    background-color: $terrain-soil;
+    border-radius: $border-radius;
+    padding: 0.25rem;
+  }
+  .content {
+    padding-left: 0.5rem;
+  }
+  .summary {
+    font-size: 0.8rem;
+  }
+  &.-unavailable {
+    opacity: 0.5;
+  }
+  &:not(.-unavailable):hover {
+    cursor: pointer;
+    border: 1px solid white;
+  }
+}
+
+.base-button {
+  border: 0;
+  background-color: black;
+  color: $ui-text;
+  padding: 0.25rem 0.5rem;
+  border-radius: $border-radius;
+  .hotkey {
+    color: white;
+  }
+}
